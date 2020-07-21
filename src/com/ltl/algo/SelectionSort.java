@@ -1,5 +1,8 @@
 package com.ltl.algo;
 
+import com.ltl.algo.test.SortTest;
+import com.ltl.algo.util.SortUtils;
+
 /**
  * 选择排序
  */
@@ -29,18 +32,6 @@ public class SelectionSort {
         int testTime = 500_000;
         int maxSize = 100;
         int maxValue = 1000;
-        for (int i = 0; i < testTime; i++) {
-            int[] arr = SortUtils.generateRandomArray(maxSize, maxValue);
-            selectionSort(arr);
-            if (!SortUtils.isSort(arr)) {
-                System.out.print("Fucking fucked!");
-                SortUtils.printArray(arr);
-                break;
-            }
-        }
-        int[] arr = SortUtils.generateRandomArray(maxSize, maxValue);
-        SortUtils.printArray(arr);
-        selectionSort(arr);
-        SortUtils.printArray(arr);
+        SortTest.testSort(SelectionSort::selectionSort, testTime, maxSize, maxValue);
     }
 }

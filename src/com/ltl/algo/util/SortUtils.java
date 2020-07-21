@@ -1,4 +1,4 @@
-package com.ltl.algo;
+package com.ltl.algo.util;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ public class SortUtils {
         // (int) Math.random() * N [0, N-1]
         int[] arr = new int[(int) (Math.random() * (maxSize + 1))]; // [0, maxSize]
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * (maxValue + 1)) + (int) (Math.random() * (maxValue + 1));
+            arr[i] = (int) (Math.random() * (maxValue + 1)) - (int) (Math.random() * (maxValue + 1));
         }
         return arr;
     }
