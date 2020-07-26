@@ -20,5 +20,6 @@ public class SortTest {
         SortUtils.printArray(arr);
         sortMethod.accept(arr);
         SortUtils.printArray(arr);
+
     }
 }

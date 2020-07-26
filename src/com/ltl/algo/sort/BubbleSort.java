@@ -1,4 +1,4 @@
-package com.ltl.algo;
+package com.ltl.algo.sort;
 
 import com.ltl.algo.test.SortTest;
 import com.ltl.algo.util.SortUtils;
