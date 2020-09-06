@@ -7,19 +7,18 @@ import com.ltl.algo.util.SortUtils;
 public class SortTest {
 
     public static void testSort(Consumer<int[]> sortMethod, int testTime, int maxSize, int maxValue) {
+        boolean success = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr = SortUtils.generateRandomArray(maxSize, maxValue);
-            sortMethod.accept(arr);
-            if (!SortUtils.isSort(arr)) {
-                System.out.print("Fucking fucked!");
+            int[] arr2 = SortUtils.copyArray(arr);
+            sortMethod.accept(arr2);
+            if (!SortUtils.isSort(arr2)) {
+                success = false;
                 SortUtils.printArray(arr);
+                SortUtils.printArray(arr2);
                 break;
             }
         }
-        int[] arr = SortUtils.generateRandomArray(maxSize, maxValue);
-        SortUtils.printArray(arr);
-        sortMethod.accept(arr);
-        SortUtils.printArray(arr);
-
+        System.out.println(success ? "Nice" : "Fucking fucked!");
     }
 }

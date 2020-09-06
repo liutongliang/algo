@@ -35,4 +35,15 @@ public class SortUtils {
     public static void printArray(int[] arr) {
         System.out.println(Arrays.toString(arr));
     }
+
+    public static int[] copyArray(int[] arr) {
+        if (arr == null) {
+            return null;
+        }
+        int[] res = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            res[i] = arr[i];
+        }
+        return res;
+    }
 }
